@@ -2,82 +2,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sayan Hazra | Physics Student</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sayan Hazra | Physics Researcher</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
+<!-- STAR BACKGROUND -->
+<canvas id="stars"></canvas>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">Sayan Hazra</div>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
 <header>
-    <div class="container hero">
-        <div>
-            <h1>Sayan Hazra</h1>
-            <h2>B.Sc. Physics Student</h2>
+    <div class="hero">
+        <h1>Sayan Hazra</h1>
+        <p>Physics Student | Aspiring Researcher in Cosmology & Gravitation</p>
 
-            <p>
-                Passionate Physics student with interests in
-                Classical Mechanics, Electromagnetism,
-                Quantum Physics, Computational Physics,
-                Cosmology and Astrophysics.
-            </p>
-
-            <div class="btns">
-                <a class="btn primary" href="mailto:sayanhazra512@gmail.com">Contact Me</a>
-                <a class="btn secondary" href="https://github.com/SayanQuark512">GitHub</a>
-            </div>
+        <div class="buttons">
+            <a href="cv/Sayan_Hazra_CV.pdf" class="btn">Download CV</a>
+            <a href="https://github.com/SayanQuark512" class="btn outline">GitHub</a>
         </div>
     </div>
 </header>
 
-<section>
-    <div class="container">
-        <h2 class="section-title">Education</h2>
+<!-- ABOUT -->
+<section id="about" class="card">
+    <h2>About Me</h2>
+    <p>
+        I am a B.Sc. Physics student interested in theoretical physics,
+        cosmology, black holes, gravitation, and computational physics.
+        I enjoy solving mathematical and physical problems using Python.
+    </p>
+</section>
 
-        <div class="card">
-            <h3>B.Sc. Physics</h3>
-            <p>Ramakrishna Mission Vivekananda Centenary College</p>
-            <p>2023 – Present | SGPA: 7.8</p>
-        </div>
+<!-- EDUCATION -->
+<section id="education" class="card">
+    <h2>Education</h2>
+
+    <p><b>B.Sc. Physics</b> — Ramakrishna Mission Vivekananda Centenary College (2023–Present)</p>
+    <p>SGPA: 7.8</p>
+
+    <p><b>Higher Secondary</b> — 74.8%</p>
+    <p><b>Secondary</b> — 93.8%</p>
+</section>
+
+<!-- RESEARCH -->
+<section id="research" class="card">
+    <h2>Research Interests</h2>
+
+    <div class="grid">
+        <div class="box">🌌 Cosmology</div>
+        <div class="box">⚫ Black Holes</div>
+        <div class="box">🪐 Gravitation</div>
+        <div class="box">🧠 Quantum Physics</div>
+        <div class="box">💻 Computational Physics</div>
+        <div class="box">📊 Numerical Methods</div>
     </div>
 </section>
 
-<section>
-    <div class="container">
-        <h2 class="section-title">Skills</h2>
+<!-- SKILLS -->
+<section id="skills" class="card">
+    <h2>Skills</h2>
 
-        <div class="grid">
-            <div class="skill">Python</div>
-            <div class="skill">Numerical Analysis</div>
-            <div class="skill">Physics</div>
-            <div class="skill">Mathematics</div>
-            <div class="skill">Problem Solving</div>
-            <div class="skill">Analytical Thinking</div>
-        </div>
+    <div class="grid">
+        <div class="box">Python</div>
+        <div class="box">Mathematics</div>
+        <div class="box">Problem Solving</div>
+        <div class="box">Numerical Analysis</div>
     </div>
 </section>
 
-<footer>
-    <h2>Let's Connect</h2>
+<!-- CONTACT -->
+<section id="contact" class="card">
+    <h2>Contact</h2>
 
+    <p>Email: sayanhazra512@gmail.com</p>
     <p>
-        GitHub:
-        <a href="https://github.com/SayanQuark512">
-            github.com/SayanQuark512
-        </a>
+        <a href="https://linkedin.com">LinkedIn</a> |
+        <a href="https://github.com/SayanQuark512">GitHub</a>
     </p>
-
-    <p>
-        LinkedIn:
-        <a href="https://linkedin.com/in/sayan-hazra-829270294">
-            linkedin.com/in/sayan-hazra-829270294
-        </a>
-    </p>
-</footer>
+</section>
 
 <script src="js/script.js"></script>
 
