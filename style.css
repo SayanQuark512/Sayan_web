@@ -155,6 +155,17 @@ header{
 
     animation:float 5s ease-in-out infinite;
 }
+/* BIG GAP CONTROL */
+.quote {
+    margin-top: 100px;   /* 👈 this creates huge gap */
+    text-align: center;
+    font-size: 22px;
+    font-style: italic;
+    color: #ffffff;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* FLOAT EFFECT */
 
