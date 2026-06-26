@@ -115,8 +115,28 @@ header{
     gap:80px;
 }
 
-.hero-text{
-    flex:1;
+.hero-image {
+    text-align: center;
+    margin-bottom: 80px; /* space below image */
+}
+
+.hero-image img {
+    width: 250px;   /* adjust size if needed */
+    height: auto;
+    border-radius: 50%; /* optional nice circle look */
+}
+
+/* BIG GAP CONTROL */
+.quote {
+    margin-top: 100px;   /* 👈 this creates huge gap */
+    text-align: center;
+    font-size: 22px;
+    font-style: italic;
+    color: #ffffff;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
 }
 
 .hero-text h1{
