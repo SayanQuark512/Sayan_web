@@ -44,4 +44,19 @@ function animate() {
 }
 
 animate();
+
+
+function sendMessage() {
+  const input = document.getElementById("chat-input");
+  const msg = input.value;
+
+  if (msg.trim() === "") return;
+
+  const chat = document.getElementById("chat-messages");
+  const div = document.createElement("div");
+  div.textContent = msg;
+
+  chat.appendChild(div);
+  input.value = "";
+}
 ```
