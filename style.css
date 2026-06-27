@@ -240,3 +240,30 @@ section{
         padding:15px 20px;
     }
 }
+#contact{
+    max-width:600px;
+    margin:80px auto;
+    text-align:center;
+}
+
+#contact form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+#contact input,
+#contact textarea{
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+}
+
+#contact button{
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
