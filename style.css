@@ -191,12 +191,12 @@ header{
 
 /* SECTIONS */
 section{
-    padding:80px 10%;
+    padding:120px 10%;
 }
 
 .card{
     max-width:1000px;
-    margin:30px auto;
+    margin:50px auto;
     padding:80px;
 
     background:rgba(255,255,255,0.08);
@@ -204,6 +204,13 @@ section{
 
     border:1px solid rgba(255,255,255,0.15);
     border-radius:20px;
+
+    line-height:1.9;
+}
+
+.card p{
+    line-height:2;
+    margin-bottom:15px;
 }
 
 /* MOBILE RESPONSIVE */
