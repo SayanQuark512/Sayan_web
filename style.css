@@ -268,35 +268,49 @@ section{
     font-size:16px;
 }
 body {
+    margin: 0;
+    padding: 20px;
     background: #0d1117;
     color: white;
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
 }
 
-h1 {
-    font-size: 40px;
-    color: #4fc3f7;
-    text-align: center;
-}
-
-h2 {
-    color: #ffffff;
-    margin-top: 25px;
-}
-
-p {
-    color: #ccc;
-    font-size: 16px;
-}
-
-a {
-    color: #4fc3f7;
+nav a {
+    color: white;
     text-decoration: none;
+    font-size: 18px;
     font-weight: bold;
 }
 
-a:hover {
-    color: #81d4fa;
+.finds-container {
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.finds-container h1 {
+    text-align: center;
+    color: #4fc3f7;
+    font-size: 42px;
+    margin-bottom: 30px;
+}
+
+.find-card {
+    background: #161b22;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.find-card h3 {
+    margin: 0 0 10px;
+}
+
+.find-card p {
+    color: #ccc;
+}
+
+.find-card a {
+    color: #4fc3f7;
+    text-decoration: none;
+    font-weight: bold;
 }
