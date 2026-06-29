@@ -314,3 +314,8 @@ nav a {
     text-decoration: none;
     font-weight: bold;
 }
+header {
+    height: auto;
+    display: block;
+    padding-top: 20px;
+}
