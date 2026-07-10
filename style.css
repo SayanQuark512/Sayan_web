@@ -348,3 +348,17 @@ section{
         padding:35px;
     }
 }
+.back-nav{
+    padding:20px 30px;
+}
+
+.back-nav a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.back-nav a:hover{
+    color:#38bdf8;
+}
