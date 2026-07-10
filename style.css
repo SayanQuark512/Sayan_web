@@ -182,11 +182,11 @@ header{
 /* QUOTE */
 
 .quote{
-    margin-top:35px;
-    font-size:22px;
+    margin-top:25px;
+    font-size:20px;
     font-style:italic;
-    line-height:1.7;
-    max-width:600px;
+    line-height:1.6;
+    max-width:550px;
     color:#fff;
 }
 
@@ -205,7 +205,7 @@ header{
 /* SECTIONS */
 
 section{
-    padding:120px 10%;
+    padding:80px 10%;
 }
 
 .card{
@@ -262,6 +262,7 @@ section{
 .finds-container{
     max-width:900px;
     margin:30px auto;
+    padding-top:20px;
 }
 
 .finds-container h1{
