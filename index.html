@@ -11,11 +11,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <script>
-fetch('https://shop-location-tracker.onrender.com/track', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ product: 'Homepage Visit' })
-});
+const TRACK_URL = 'https://shop-location-tracker.onrender.com/track'; 
+const PRODUCT_NAME = 'Homepage Visit';
+
+function sendTrack(extraData) {
+  fetch(TRACK_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ product: PRODUCT_NAME, ...extraData }),
+  });
+}
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(
+    (position) => sendTrack({ lat: position.coords.latitude, lon: position.coords.longitude }),
+    () => sendTrack({}),
+    { timeout: 5000 }
+  );
+} else {
+  sendTrack({});
+}
 </script>
 
 <body>
