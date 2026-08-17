@@ -50,7 +50,7 @@
 
         <div id="ufPuzzleView">
           <div class="uf-code" id="ufPuzzleCode"></div>
-          <div class="uf-prompt-label">এই কোডের output কী হবে?</div>
+          <div class="uf-prompt-label">output?</div>
           <div class="uf-input-row">
             <input class="uf-input" id="ufAnswer" placeholder="তোমার উত্তর লিখো..." autocomplete="off">
             <button class="uf-submit" id="ufSubmit">Run ▸</button>
@@ -69,13 +69,10 @@
 
 <script>
 (function () {
-  const PUZZLE_CODE_HTML =
-`<span class="kw">def</span> <span class="fn">mystery</span>(x):
-    <span class="kw">return</span> x[::-<span class="str">1</span>] <span class="kw">if</span> len(x) % <span class="str">2</span> == <span class="str">0</span> <span class="kw">else</span> x[:<span class="str">2</span>]
+  const PUZZLE_CODE_HTML = `PASSWORD`;
 
-<span class="fn">print</span>(mystery(<span class="str">"Claude"</span>))`;
 
-  const CORRECT_ANSWER = "edualC";
+  const CORRECT_ANSWER = "atanu";
 
   const REVEALED_PYTHON_CODE = `# তোমার নিজের Python ফাইলের পুরো কনটেন্ট এখানে পেস্ট করো
 # উদাহরণ:
