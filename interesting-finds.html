@@ -46,9 +46,7 @@
 
     <section class="uf-section">
 
-        <div class="uf-eyebrow">
-            Unknown Finds
-        </div>
+        <div class="uf-eyebrow">Unknown Finds</div>
 
         <button class="uf-avatar-wrap" id="ufTrigger">
 
@@ -67,11 +65,13 @@
     </section>
 
 
-    <!-- PASSWORD POPUP -->
+    <!-- MAIN OVERLAY -->
 
     <div class="uf-overlay" id="ufOverlay">
 
         <div class="uf-modal">
+
+            <!-- HEADER -->
 
             <div class="uf-modal-head">
 
@@ -84,9 +84,13 @@
             </div>
 
 
+            <!-- PASSWORD -->
+
             <div id="ufPuzzleView">
 
-                <div class="uf-code" id="ufPuzzleCode"></div>
+                <div class="uf-code" id="ufPuzzleCode">
+                    PASSWORD
+                </div>
 
                 <div class="uf-prompt-label">
                     Enter Password
@@ -118,6 +122,62 @@
 
             </div>
 
+
+            <!-- FILE LIST -->
+
+            <div
+                id="ufFileView"
+                style="display:none;"
+            >
+
+                <div class="uf-reveal-label">
+                    ✔ access granted — project files
+                </div>
+
+                <div class="uf-file-list">
+
+                    <button
+                        class="uf-file"
+                        id="ufPythonFile"
+                    >
+                        📄 1_d ising model.py
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- TEXT VIEWER -->
+
+            <div
+                id="ufTextView"
+                style="display:none;"
+            >
+
+                <div class="uf-reveal-label">
+
+                    <button
+                        id="ufBackFiles"
+                        class="uf-back-file"
+                    >
+                        ← Files
+                    </button>
+
+                    <span id="ufFileName">
+                        1_d ising model.py
+                    </span>
+
+                </div>
+
+                <pre
+                    id="ufFileContent"
+                    class="uf-file-content"
+                ></pre>
+
+            </div>
+
+
         </div>
 
     </div>
@@ -129,56 +189,77 @@
 
 (function () {
 
-    /* What will be shown inside the popup */
-    const PUZZLE_CODE_HTML = `PASSWORD`;
+    /* =========================
+       SETTINGS
+    ========================= */
 
-    /* Correct password */
     const CORRECT_ANSWER = "atanu";
 
-    /* Python file to open */
-    const REVEALED_PYTHON_FILE = "1_d ising model.py";
+    const PYTHON_FILE = "1_d ising model.py";
 
 
-    /* Get HTML elements */
+    /* =========================
+       ELEMENTS
+    ========================= */
 
     const overlay =
-        document.getElementById('ufOverlay');
+        document.getElementById("ufOverlay");
 
     const trigger =
-        document.getElementById('ufTrigger');
+        document.getElementById("ufTrigger");
 
     const closeBtn =
-        document.getElementById('ufClose');
-
-    const puzzleCodeEl =
-        document.getElementById('ufPuzzleCode');
+        document.getElementById("ufClose");
 
     const answerInput =
-        document.getElementById('ufAnswer');
+        document.getElementById("ufAnswer");
 
     const submitBtn =
-        document.getElementById('ufSubmit');
+        document.getElementById("ufSubmit");
 
     const feedback =
-        document.getElementById('ufFeedback');
+        document.getElementById("ufFeedback");
+
+    const puzzleView =
+        document.getElementById("ufPuzzleView");
+
+    const fileView =
+        document.getElementById("ufFileView");
+
+    const textView =
+        document.getElementById("ufTextView");
+
+    const pythonFile =
+        document.getElementById("ufPythonFile");
+
+    const fileContent =
+        document.getElementById("ufFileContent");
+
+    const fileName =
+        document.getElementById("ufFileName");
+
+    const backFiles =
+        document.getElementById("ufBackFiles");
 
 
-    /* Show PASSWORD */
-
-    puzzleCodeEl.textContent = PUZZLE_CODE_HTML;
-
-
-    /* Open password popup */
+    /* =========================
+       OPEN PASSWORD WINDOW
+    ========================= */
 
     function openModal() {
 
-        overlay.classList.add('uf-open');
+        overlay.classList.add("uf-open");
 
-        answerInput.value = '';
+        puzzleView.style.display = "block";
+        fileView.style.display = "none";
+        textView.style.display = "none";
 
-        feedback.textContent = '';
+        answerInput.value = "";
 
-        feedback.className = 'uf-feedback';
+        feedback.textContent = "";
+
+        feedback.className =
+            "uf-feedback";
 
         setTimeout(function () {
             answerInput.focus();
@@ -186,16 +267,20 @@
     }
 
 
-    /* Close popup */
+    /* =========================
+       CLOSE WINDOW
+    ========================= */
 
     function closeModal() {
 
-        overlay.classList.remove('uf-open');
+        overlay.classList.remove("uf-open");
 
     }
 
 
-    /* Check password */
+    /* =========================
+       CHECK PASSWORD
+    ========================= */
 
     function checkAnswer() {
 
@@ -209,55 +294,122 @@
         ) {
 
             feedback.textContent =
-                '✔ Correct! Opening...';
+                "✔ Correct! Access granted.";
 
             feedback.className =
-                'uf-feedback uf-ok';
+                "uf-feedback uf-ok";
 
 
             setTimeout(function () {
 
-                window.open(
-                    REVEALED_PYTHON_FILE,
-                    '_blank'
-                );
+                puzzleView.style.display = "none";
 
-            }, 500);
+                fileView.style.display = "block";
+
+            }, 400);
 
 
         } else {
 
             feedback.textContent =
-                '✕ Wrong password';
+                "✕ Wrong password";
 
             feedback.className =
-                'uf-feedback uf-err';
+                "uf-feedback uf-err";
 
         }
 
     }
 
 
-    /* Click profile */
+    /* =========================
+       OPEN PYTHON FILE
+    ========================= */
+
+    pythonFile.addEventListener(
+        "click",
+        function () {
+
+            fileName.textContent =
+                PYTHON_FILE;
+
+            fileContent.textContent =
+                "Loading...";
+
+            fileView.style.display =
+                "none";
+
+            textView.style.display =
+                "block";
+
+
+            fetch(PYTHON_FILE)
+
+                .then(function (response) {
+
+                    if (!response.ok) {
+                        throw new Error(
+                            "File could not be loaded."
+                        );
+                    }
+
+                    return response.text();
+
+                })
+
+                .then(function (text) {
+
+                    fileContent.textContent =
+                        text;
+
+                })
+
+                .catch(function (error) {
+
+                    fileContent.textContent =
+                        "Unable to load file.\n\n" +
+                        error.message;
+
+                });
+
+        }
+    );
+
+
+    /* =========================
+       BACK TO FILE LIST
+    ========================= */
+
+    backFiles.addEventListener(
+        "click",
+        function () {
+
+            textView.style.display =
+                "none";
+
+            fileView.style.display =
+                "block";
+
+        }
+    );
+
+
+    /* =========================
+       EVENT LISTENERS
+    ========================= */
 
     trigger.addEventListener(
-        'click',
+        "click",
         openModal
     );
 
-
-    /* Close button */
-
     closeBtn.addEventListener(
-        'click',
+        "click",
         closeModal
     );
 
-
-    /* Click outside popup */
-
     overlay.addEventListener(
-        'click',
+        "click",
         function (e) {
 
             if (e.target === overlay) {
@@ -267,22 +419,16 @@
         }
     );
 
-
-    /* Unlock button */
-
     submitBtn.addEventListener(
-        'click',
+        "click",
         checkAnswer
     );
 
-
-    /* Press Enter */
-
     answerInput.addEventListener(
-        'keydown',
+        "keydown",
         function (e) {
 
-            if (e.key === 'Enter') {
+            if (e.key === "Enter") {
                 checkAnswer();
             }
 
